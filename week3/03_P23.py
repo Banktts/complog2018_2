@@ -14,13 +14,16 @@ for i in range(h_tri):
 	else:
 		h_tri_free_space=h_tri-1-i
 		if h_tri_free_space > 0 :
+		######### 1st triangle
 			for j in range(h_tri_free_space):
 				print(".", end='')
 			for j in range(n-(2*h_tri_free_space)):
 				print("#", end='')
 			for j in range(h_tri_free_space):
 				print(".", end='')
+		######### gap between triangle
 			print(".", end='')
+		######### 2nd triangle
 			for j in range(h_tri_free_space):
 				print(".", end='')
 			for j in range(n-(2*h_tri_free_space)):
