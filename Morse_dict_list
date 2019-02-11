@@ -1,0 +1,51 @@
+dataFile=[]
+file=open(input().strip(),'r')
+n=0
+for line in file:
+	dataFile.append(line.strip())
+	n+=1
+Cmd=dataFile[0]
+data=dataFile[1][1:len(dataFile[1])-1].replace("[",'||').strip().replace(']',":")
+dataInput=[]
+dataDic={}
+for i in data.split('||'):
+	tmp=i.split(":")
+	Key,Val=tmp[0],tmp[1]
+	dataDic[Key]=Val
+for i in range(2,n):
+	dataInput.append(dataFile[i])
+if Cmd == "T2M":
+	for i in dataInput:
+		st=False
+		tmp=""
+		for j in i:
+			if j in dataDic:
+				tmp+=dataDic[j]+" "
+				st=True
+			else:
+				st=False
+				break
+		if st == True:
+			print(tmp.strip())
+		else:
+			print("Invalid :",i.strip())
+elif Cmd == "M2T":
+	for i in dataInput:
+		tmp=""
+		for j in i.strip().split(" "):
+			st=False
+			for k in dataDic.values():
+				if k==j:
+					for e in dataDic.keys():
+						if j==dataDic[e]:
+							tmp+=e
+							st=True
+					break
+			if st==False:
+				break
+		if st == True:
+			print(tmp.strip())
+		else:
+			print("Invalid :",i.strip())
+else:
+	print("Invalid code")
