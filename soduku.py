@@ -40,11 +40,11 @@ for i in range(9):
 	if not(("9" in tmp) and ("8" in tmp)and ("7" in tmp) and ("6" in tmp) and ("5" in tmp)and ("4" in tmp) and ("3" in tmp) and ("2" in tmp) and ("1" in tmp)):
 		box+=str(i+1)+" "
 if len(row) == 5:
-	row+="Ok"
+	row+="OK"
 if len(col) == 5:
-	col+="Ok"
+	col+="OK"
 if len(box) == 5:
-	box+="Ok"
+	box+="OK"
 if com == "R":
 	print(row)
 elif com=="C":
